@@ -1,14 +1,15 @@
 import os
 import subprocess
 import urllib.parse
+import getpass
 
 DOCKER_TLS_VERIFY="1"
 DOCKER_HOST="tcp://192.168.99.100:2376"
 DOCKER_MACHINE_NAME="grafana-dev1"
-DOCKER_CERT_PATH=r"C:\Users\imorgan.admin\.docker\machine\machines\{}".format(DOCKER_MACHINE_NAME)
+DOCKER_CERT_PATH=r"C:\Users\{}\.docker\machine\machines\{}".format(getpass.getuser(), DOCKER_MACHINE_NAME)
 IMAGE_NAME = r"grafana-dev-image"
 
-HOST_SHARE_FOLDER = r"C:\Users\imorgan.admin\share\grafana-src"
+HOST_SHARE_FOLDER = r"C:\Users\{}\share\grafana-src".format(getpass.getuser())
 
 env = {'DOCKER_TLS_VERIFY': DOCKER_TLS_VERIFY,
        'DOCKER_HOST': DOCKER_HOST,
