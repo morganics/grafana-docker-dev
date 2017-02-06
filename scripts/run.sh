@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 pushd "/usr/share/grafana-src/src/github.com/grafana/grafana"
-exec go run build.go setup
-exec go run build.go build
-exec grunt
-exec grunt watch
-exec bra run
+go run build.go setup
+go run build.go build
+npm install
+grunt
+grunt watch &
+bra run
 popd

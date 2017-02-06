@@ -25,7 +25,7 @@ RUN 	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 		yarn install --pure-lockfile && \
 		npm install -g grunt-cli && \
 		go get github.com/Unknwon/bra && \
-		apt-get -y install build-essential ruby-dev rubygems && \
+		apt-get -y install build-essential ruby-dev rubygems alien && \
 		gem install fpm
 
 #RUN 	cd /usr/share/grafana-src && \
@@ -40,7 +40,7 @@ COPY ./run.sh /usr/share/grafana-src/run.sh
 VOLUME ["/usr/share/grafana-src/src/github.com/grafana/grafana"]
 
 WORKDIR /usr/share/grafana-src
-#ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["./run.sh"]
 
 
 
