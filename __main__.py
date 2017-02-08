@@ -15,7 +15,7 @@ DOCKER_MACHINE_NAME="grafana-dev1"
 DOCKER_CERT_PATH=r"C:\Users\{}\.docker\machine\machines\{}".format(getpass.getuser(), DOCKER_MACHINE_NAME)
 IMAGE_NAME = r"grafana-dev-image"
 HOST_SHARE_FOLDER = r"C:\Users\{}\share\grafana-src".format(getpass.getuser())
-DEPLOY_IMAGE_NAME = "grafana_indalyz"
+DEPLOY_IMAGE_NAME = "grafana_pub"
 dist_deb_path = r"C:\Users\{}\share\grafana-src\dist\grafana_4.2.0-1486135758pre1_amd64.deb".format(getpass.getuser())
 
 env = {'DOCKER_TLS_VERIFY': DOCKER_TLS_VERIFY,
@@ -61,7 +61,7 @@ build_path = os.path.join("scripts", "docker_build.cmd")
 
 ## Setup the shared folder
 #execute(init_path, env)
-#set_docker_ip(env)
+set_docker_ip(env)
 
 ## build the docker image
 #execute(build_path, env)

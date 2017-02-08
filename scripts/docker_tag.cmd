@@ -1,0 +1,1 @@
+CALL docker tag %IMAGE_NAME% %DOCKER_REPO%
