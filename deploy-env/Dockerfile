@@ -3,7 +3,7 @@ FROM debian:jessie
 COPY ./grafana.deb /tmp/grafana.deb
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libfontconfig curl ca-certificates && \
+    apt-get -y --no-install-recommends install adduser libfontconfig curl ca-certificates git && \
     apt-get clean && \
     dpkg -i /tmp/grafana.deb && \
     rm /tmp/grafana.deb && \

@@ -2,7 +2,7 @@
 
 : "${GF_PATHS_DATA:=/var/lib/grafana}"
 : "${GF_PATHS_LOGS:=/var/log/grafana}"
-: "${GF_PATHS_PLUGINS:=/var/lib/grafana/plugins}"
+: "${GF_PATHS_PLUGINS:=/usr/share/grafana/data/plugins}"
 
 chown -R grafana:grafana "$GF_PATHS_DATA" "$GF_PATHS_LOGS"
 chown -R grafana:grafana /etc/grafana
